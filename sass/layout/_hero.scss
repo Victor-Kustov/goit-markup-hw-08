@@ -2,8 +2,9 @@
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 200px;
-  padding-bottom: 200px;
+  padding: 118px 0;
+  // padding-top: 200px;
+  // padding-bottom: 200px;
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
@@ -12,20 +13,26 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
   background-color: $hero-bg-color;
+
+  @media screen and (min-width: 1200px) {
+    padding: 200px 0;
+  }
 }
 
 .hero__title {
   text-align: center;
-  @include font($fw: 900, $fs: 44px, $lh: 1.36, $ls: 0.06em);
+  @include font($fw: 900, $fs: 26px, $lh: 1.62, $ls: 0.06em);
   text-transform: uppercase;
   color: $third-text-color;
-
-  width: 696px;
+  // width: 696px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 30px;
+
+  @media screen and (min-width: 1200px) {
+    @include font($fw: 900, $fs: 44px, $lh: 1.36, $ls: 0.06em);
+  }
 }
 
 .hero__button {
