@@ -1196,10 +1196,6 @@ body {
   margin-bottom: 30px;
 }
 
-.portfolio__item:not(:nth-child(2n)) {
-  margin-right: 30px;
-}
-
 .portfolio__item:last-child {
   margin-right: 0;
 }
@@ -1208,21 +1204,24 @@ body {
   .portfolio__item:nth-last-child(-n + 2) {
     margin-bottom: 0;
   }
+  .portfolio__item:not(:nth-child(2n)) {
+    margin-right: 30px;
+  }
 }
 
-@media screen and (max-width: 767.5px) {
+@media screen and (min-width: 768px) and (max-width: 767.5px) {
   .portfolio__item {
     max-width: 450px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (min-width: 768px) {
   .portfolio__item {
     max-width: 354px;
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) and (min-width: 1200px) {
   .portfolio__item {
     margin-right: 30px;
   }
