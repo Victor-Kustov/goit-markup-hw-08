@@ -201,7 +201,7 @@ body {
 }
 
 @media screen and (max-width: 767.5px) {
-  .filter__item:not(:last-child) {
+  .filter__item:not(:nth-last-child(-n + 2)) {
     margin-bottom: 15px;
   }
 }
@@ -234,6 +234,17 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+@media screen and (max-width: 767.5px) {
+  .backdrop {
+    display: flex;
+    align-items: center;
+    padding-top: auto;
+    padding-bottom: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
 .backdrop.is-hidden .modal {
   transform: translate(-50%, -50%) scale(0.5) rotate(-120deg);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -246,17 +257,30 @@ body {
 }
 
 .modal {
-  position: absolute;
-  width: 528px;
-  min-height: 581px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   padding: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    position: absolute;
+    width: 528px;
+    min-height: 581px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (max-width: 767.5px) {
+  .modal {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
 }
 
 .modal__close-button {
@@ -411,10 +435,15 @@ body {
 
 .header__container {
   display: flex;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   align-items: center;
-  justify-content: space-between;
+}
+
+@media screen and (max-width: 1199.5px) {
+  .header__container {
+    justify-content: space-between;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -492,20 +521,10 @@ body {
 
 @media screen and (min-width: 768px) {
   .mobile-menu {
+    width: 100%;
+    justify-content: space-between;
     align-items: center;
-    margin-left: auto;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .navigation {
-    margin-right: 84px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .navigation {
-    margin-right: 305px;
+    margin-left: 93px;
   }
 }
 
@@ -793,10 +812,6 @@ body {
   }
 }
 
-.benefits__item {
-  margin-bottom: 30px;
-}
-
 @media screen and (min-width: 768px) {
   .benefits__item {
     margin: 15px;
@@ -808,6 +823,10 @@ body {
   .benefits__item {
     flex-basis: calc((100% - 120px) / 4);
   }
+}
+
+.benefits__item:not(:last-child) {
+  margin-bottom: 30px;
 }
 
 .benefits__box {
@@ -827,6 +846,12 @@ body {
   text-transform: uppercase;
   color: #212121;
   margin-bottom: 10px;
+}
+
+@media screen and (max-width: 767.5px) {
+  .benefits__title {
+    text-align: center;
+  }
 }
 
 .benefits__text {
@@ -966,6 +991,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  margin: -15px;
 }
 
 .clients__item {
@@ -1175,21 +1201,11 @@ body {
   fill: #ffffff;
 }
 
-@media screen and (max-width: 767.5px) {
-  .portfolio {
-    text-align: center;
-  }
-}
-
 @media screen and (min-width: 768px) {
   .portfolio {
     display: flex;
     flex-wrap: wrap;
   }
-}
-
-.portfolio__item {
-  border-bottom: 1px solid #eeeeee;
 }
 
 .portfolio__item:not(:last-child) {
@@ -1201,7 +1217,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .portfolio__item:nth-last-child(-n + 2) {
+  .portfolio__item:not(:last-child) {
     margin-bottom: 0;
   }
   .portfolio__item:not(:nth-child(2n)) {
@@ -1270,6 +1286,9 @@ body {
 }
 
 .portfolio__thumb {
+  border-bottom: 1px solid #eeeeee;
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
   padding: 20px 24px;
 }
 

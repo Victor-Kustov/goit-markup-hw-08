@@ -1,7 +1,7 @@
 .portfolio {
-  @media screen and (max-width: 767.5px) {
-    text-align: center;
-  }
+  // @media screen and (max-width: 767.5px) {
+  //   text-align: center;
+  // }
   @media screen and (min-width: 768px) {
     display: flex;
     flex-wrap: wrap;
@@ -9,7 +9,6 @@
 }
 
 .portfolio__item {
-  border-bottom: 1px solid $portfolio-border-color;
   &:not(:last-child) {
     margin-bottom: 30px;
   }
@@ -21,7 +20,7 @@
   }
 
   @media screen and (min-width: 768px) {
-    &:nth-last-child(-n + 2) {
+    &:not(:last-child) {
       margin-bottom: 0;
     }
     &:not(:nth-child(2n)) {
@@ -80,6 +79,9 @@
 }
 
 .portfolio__thumb {
+  border-bottom: 1px solid $portfolio-border-color;
+  border-left: 1px solid $portfolio-border-color;
+  border-right: 1px solid $portfolio-border-color;
   padding: 20px 24px;
 }
 

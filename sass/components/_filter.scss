@@ -18,7 +18,7 @@
     margin-right: 8px;
   }
   @media screen and (max-width: 767.5px) {
-    &:not(:last-child) {
+    &:not(:nth-last-child(-n + 2)) {
       margin-bottom: 15px;
     }
   }

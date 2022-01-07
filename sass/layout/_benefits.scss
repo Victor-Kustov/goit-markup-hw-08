@@ -18,7 +18,9 @@
   @media screen and (min-width: 1200px) {
     flex-basis: calc((100% - 120px) / 4);
   }
-  margin-bottom: 30px;
+  &:not(:last-child) {
+    margin-bottom: 30px;
+  }
 }
 
 .benefits__box {
@@ -31,6 +33,9 @@
 }
 
 .benefits__title {
+  @media screen and (max-width: 767.5px) {
+    text-align: center;
+  }
   @include font($fw: 700, $lh: 1.14);
   text-transform: uppercase;
   color: $main-text-color;
